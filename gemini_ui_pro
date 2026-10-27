@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+"""
+Wrapper launcher for gemini_ui_pro.py
+Allows running either 'python3 gemini_ui_pro' or 'python3 gemini_ui_pro.py'
+"""
+import os
+import sys
+
+script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gemini_ui_pro.py")
+with open(script_path, "r", encoding="utf-8") as f:
+    code = f.read()
+
+exec(compile(code, script_path, 'exec'))
